@@ -1,7 +1,6 @@
 #!/bin/bash
-
-#java -jar com.gzoltar-0.0.10-jar-with-dependencies.jar <project directory> <packages to instrument or test packages to execute (separated by ',')> <class path: bin/target directory, librabries, etc (separated by ':')>
-
+# This script runs the GZoltar jar file, the args are defined as below
+# java -jar com.gzoltar-0.0.10-jar-with-dependencies.jar <project directory> <packages to instrument or test packages to execute (separated by ',')> <class path: bin/target directory, librabries, etc (separated by ':')>
 # $1 command line argument corresponds to project directory
 # $2 command line argument corresponds to packages to instrument
 # $3 command line argument corresponds class path

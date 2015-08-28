@@ -1,3 +1,7 @@
 #!/bin/bash
 # This script removes the files that run-tacoco and clean-tacoco create
+
+cd ../tacoco
 rm cp.txt jacoco.exec *.json
+rm -r target
+rm -r lib
