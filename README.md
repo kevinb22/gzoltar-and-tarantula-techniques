@@ -18,6 +18,10 @@ Tarantula
 Tarantula the second fault localization tool in this repo. For this project we obtain a Json format cov matrix of the program
 and then calculate the suspiciousness using the TarantulaMain.java class.
 
+TarantulaMain requires several arguments to be run:
+	- The cov-matrix in Json format
+	- The class file of the Test program
+
 
 Getting started
 ---------------
@@ -43,7 +47,7 @@ Evaluating bugs using GZoltar
 	- (Optional) ./run-gzoltar ../triangle triangle target/classes/:target/test-classes | grep "Triangle.java" will print only the suspiciousness for lines in Triangle
 
 3. Generalize; the general form is 
-	- ./run-gzoltar <project dir> <test package to execute> <class/path>
+	- ./run-gzoltar project dir test package to execute class/path
 
 
 Evaluating bugs using Tarantula
@@ -53,7 +57,13 @@ Evaluating bugs using Tarantula
 2. Run Jacoco.exec Analyzer
 	- ./run-jacoco /abs/path/to/repo/triangle triangle /abs/path/to/repo/tacoco
 
+3. Create a .class file for the Test program
+	- cd /triange/path/to/TestSuite.java
+	- javac TestSuite.java
+	- mv TestSuite.class /abs/path/to/repo/tarantula
+
 3. Run TarantulaMain 
-	- java TarantulaMain /abs/path/to/repo/tacoco/triange-mcn-compact-cov-matrix.json /abs/path/to/repo/triangle/path/to/TestSuite.java
+	- java TarantulaMain /abs/path/to/repo/tacoco/triange-mcn-compact-cov-matrix.json TestSuite.class
+
 
 
