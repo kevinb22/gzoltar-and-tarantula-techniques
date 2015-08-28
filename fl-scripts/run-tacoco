@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# $1 command line argument refers to absolute class path of the dir under test
+# $2 command line argument refers to absolute class path of the tacoco dir
+# run as ./run-tacoco absolute/path/of/your/project/root absolute/path/of/tacoco/root
+# note how there are no ending forward slashes at the end of the paths
+
+cd $1
+mvn dependency:build-classpath -Dmdep.outputFile="cp.txt"
+export CLASSPATH=`cat cp.txt`:$CLASSPATH
+echo $CLASSPATH
+export CLASSPATH=$1/target/test-classes:$1/target/classes:$CLASSPATH
+echo $CLASSPATH
+
+cd $2
+mvn dependency:build-classpath -Dmdep.outputFile="cp.txt"
+export CLASSPATH=`cat cp.txt`:$CLASSPATH
+echo $CLASSPATH
+export CLASSPATH=$2/target/test-classes:$2/target/classes:$CLASSPATH
+echo $CLASSPATH
+mvn dependency:copy-dependencies -DoutputDirectory=lib
+java -javaagent:lib/org.jacoco.agent-0.7.4.201502262128-runtime.jar=destfile=jacoco.exec,dumponexit=false org.spideruci.tacoco.TacocoRunner $1/target/test-classes
+
