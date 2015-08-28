@@ -1,3 +1,4 @@
 #!/bin/bash
 
 rm cp.txt jacoco.exec *.json
+rm -r target/
