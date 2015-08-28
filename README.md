@@ -19,8 +19,8 @@ Tarantula is the second fault localization tool in this repo. For this project t
 and then calculate suspiciousness of lines using TarantulaMain.java.
 
 TarantulaMain requires several arguments to be run:
-	- The cov-matrix in Json format
-	- The class file of the Test program
+	(1) The cov-matrix in Json format
+	(2) The class file of the Test program
 
 
 Getting started
@@ -57,17 +57,19 @@ Evaluating bugs using Tarantula
 	- cd fl-scripts
 
 1. Run Tacoco: The run-tacoco script runs tacoco and creates cp.txt files in both the system-under-test dir and the tacoco dir 
-	- ./run-tacoco /abs/path/to/repo/triangle /abs/path/to/repo/tacoco
+	- ./run-tacoco /absoluteolute/path/to/repo/triangle /absolute/path/to/repo/tacoco
 
-2. Run Jacoco.exec Analyzer: The run-jacoco script creates the jacoco.exec file and the .json files in the tacoco dir
-	- ./run-jacoco /abs/path/to/repo/triangle triangle /abs/path/to/repo/tacoco
+2. Run Jacoco.exec Analyzer: The run-jacoco script creates the jacoco.exec file and the .json files in the tacoco dir, the script will have to be run inside the tacoco dir so you can cp it into the tacoco directory
+	- cp -i run-jacoco ../tacoco
+	- cd /tacoco/
+	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
-3. Run TarantulaMain: TarantulaMain requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite
-	- java TarantulaMain /abs/path/to/repo/tacoco/triange-compact-cov-matrix.json TestSuite
+3. Run TarantulaMain: TarantulaMain requires two args(see the file for more details), the first is the absoluteolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite
+	- java TarantulaMain /absolute/path/to/repo/tacoco/triange-compact-cov-matrix.json TestSuite
 
 4, Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
-	-./clean-tacoco
-	- mvn clean (in tacoco)
+	- ./clean-tacoco
+	- mvn compile (in tacoco)
 
 Directory Structure
 -------------------
