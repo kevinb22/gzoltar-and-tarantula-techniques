@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # This script creates the compact.json file and the compact-cov-matrix.json file, execute this script after run-tacoco
+# to be run from within the tacoco dir
 # The command line arg descriptions are as follows: 
 # NOTE do not include an ending backslash for any of the command line arg
 # $1 command line arg, absolute path of system-under-test's root 

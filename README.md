@@ -18,9 +18,11 @@ Tarantula
 Tarantula is the second fault localization tool in this repo. For this project tacoco is used to obtain a Json format cov matrix of the program
 and then calculate suspiciousness of lines using TarantulaMain.java.
 
+The github projects for tacoco and primitive hamcrest can be found at https://github.com/spideruci/tacoco & https://github.com/inf295uci-2015/primitive-hamcrest respectively
+
 TarantulaMain requires several arguments to be run:
-	(1) The cov-matrix in Json format
-	(2) The class file of the Test program
+	- (1) The cov-matrix in Json format
+	- (2) The class file of the Test program
 
 
 Getting started
@@ -59,7 +61,7 @@ Evaluating bugs using Tarantula
 1. Run Tacoco: The run-tacoco script runs tacoco and creates cp.txt files in both the system-under-test dir and the tacoco dir 
 	- ./run-tacoco /absoluteolute/path/to/repo/triangle /absolute/path/to/repo/tacoco
 
-2. Run Jacoco.exec Analyzer: The run-jacoco script creates the jacoco.exec file and the .json files in the tacoco dir, the script will have to be run inside the tacoco dir so you can cp it into the tacoco directory
+2. Run Jacoco.exec Analyzer: The run-jacoco script creates the jacoco.exec file and the .json files in the tacoco dir, the script will have to be run inside the tacoco dir so you can copy it into the tacoco directory
 	- cp -i run-jacoco ../tacoco
 	- cd /tacoco/
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
