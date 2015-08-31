@@ -8,7 +8,12 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
- 
+
+/**
+ * Takes the required information from the compact json file produced by tacoco
+ * retrieves program name, first line, test count, coverable lines, and coverage matrix
+ */
+
 public class covMatrixReader {
     private File jsonFile;
     private boolean[][] M;
@@ -32,10 +37,10 @@ public class covMatrixReader {
             // cast the obj into a JSONObject
             JSONObject jsonObject = (JSONObject) obj;
              
-            // output the number of test cases
+            // store the number of test cases
             testCount = (Long) jsonObject.get("testCount");
              
-            // sources will contain various info about the program
+            // sources stores the value from the key 'sources' in the JSONObject
             sources = (JSONArray) jsonObject.get("sources");
              
             // sources is an array of size 1
@@ -44,9 +49,7 @@ public class covMatrixReader {
             // source will contain the program name, first line, and last line
             JSONObject lineInfo = (JSONObject)source.get("source");
             fullName = (String) lineInfo.get("fullName");
-            
             firstLine = (Long) lineInfo.get("firstLine");
-            
              
             // create a JSONArray for the testStmtMatrix
             JSONArray JSONStmtMatrix = (JSONArray) source.get("testStmtMatrix");
@@ -79,7 +82,7 @@ public class covMatrixReader {
         return M;
     }
      
-    /**Return a boolean array indexed by line number and true=line is coverable i.e. not a blank line or comment**/
+    /**Return a boolean array indexed by line number and true=line is coverable/not a blank line or comment**/
     public boolean[] getC(){
         return C;
     }
