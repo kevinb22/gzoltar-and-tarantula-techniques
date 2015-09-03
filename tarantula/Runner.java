@@ -1,4 +1,4 @@
-package TarantulaCalculator;
+package tarantula;
 
 import java.util.ArrayList;
 import java.util.List;

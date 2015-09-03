@@ -1,4 +1,4 @@
-package TarantulaCalculator;
+package tarantula;
 
 /*******************************************************************************
  * Copyright (c) 2010 James A. Jones jim@jamesajones.net

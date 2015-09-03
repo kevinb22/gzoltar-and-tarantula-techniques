@@ -1,4 +1,4 @@
-package TarantulaCalculator;
+package tarantula;
 
 import java.io.File;
 import java.io.FileNotFoundException;
