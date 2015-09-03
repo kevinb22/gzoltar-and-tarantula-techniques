@@ -24,7 +24,7 @@ Runner
 This program stores the results from a JUnit test and holds an array of the test case numbers that fail. All
 test headers should be as follows test1, test2, test3 ect. Otherwise the runner class will not work properly.
 
-covMatrxiReader
+covMatrixReader
 ---------------
 This program reads the json file produces by tacoco and parses the information into the boolean arrays needed by 
 TarantulaSuspiciousnessCalculation. The covMatrixReader is used only to parse information from the compact version of the json
