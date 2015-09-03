@@ -1,4 +1,4 @@
-package triangle;
+package com.defects4j.fldefects4j.fldefects4j.fldefects4j.fl;
 
 public class Triangle {
 

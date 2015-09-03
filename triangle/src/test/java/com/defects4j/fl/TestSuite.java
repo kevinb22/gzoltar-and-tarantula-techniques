@@ -1,7 +1,7 @@
-package triangle.test;
+package com.defects4j.fl;
 
 import junit.framework.TestCase;
-import static triangle.Triangle.Type.*;
+import static com.defects4j.fl.Triangle.Type.*;
 
 public class TestSuite extends TestCase {
 
