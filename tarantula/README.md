@@ -1,7 +1,7 @@
 tarantula
 ---------
-The classes in the tarantula directory are used to take the information from the json file produced by tacoco and from JUnit then
-use the information to caculate the supsciousness for the lines of a program using the tarantula technique. Refer to the documentation
+The classes in the tarantula directory are used to take the information from the json file produced by tacoco and junit tests on the program and 
+then use the information to caculate the supsciousness for the lines of a program using the tarantula technique. Refer to the documentation
 in the classes for more information.
 
 TarantulaSuspiciousnessCalculation
@@ -21,14 +21,14 @@ requires several boolean arrays in order to be able to compute suspisciousness o
 
 Runner
 ------
-This program stores the results from a JUnit test and holds an array of the test case numbers that fail. All
-test headers should be as follows test1, test2, test3 ect. Otherwise the runner class will not work properly.
+This program stores the results from a junit tests and holds an array of the test case numbers that fail. All
+test headers should be as follows test1, test2, test3 ect. Otherwise the Runner will not work properly.
 
 covMatrixReader
 ---------------
 This program reads the json file produces by tacoco and parses the information into the boolean arrays needed by 
 TarantulaSuspiciousnessCalculation. The covMatrixReader is used only to parse information from the compact version of the json
-file, this is the default when running tacoco.
+file, this is the default json format when running tacoco.
 
 TarantulaMain
 --------------

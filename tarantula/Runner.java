@@ -6,7 +6,11 @@ import java.util.List;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
- 
+
+/**
+ * This class stores all the failed tests from a Test class
+ */
+
 public class Runner {
 	/**Holds a list of all the tests numbers that fail **/
     private ArrayList<Integer> failCases;

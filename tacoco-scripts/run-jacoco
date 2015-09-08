@@ -1,12 +1,14 @@
 #!/bin/bash
-
 # This script creates the compact.json file and the compact-cov-matrix.json file, execute this script after run-tacoco
-# to be run from within the tacoco dir
+# This script needs to to be run from within the tacoco dir, the script can be copied into the tacoco dir
+
+# (Note: do not include an ending backslash for any of the command line arg)
 # The command line arg descriptions are as follows: 
-# NOTE do not include an ending backslash for any of the command line arg
 # $1 command line arg, absolute path of system-under-test's root 
-# $2 command line arg, refers to the name of the file/program that is going to be compacted
-# $3 command line arg, refers to the absolute path file of the coverage-data-file 
+# $2 command line arg, name for the compacted json file, format of ${2}-compact.json 
+# $3 command line arg, absolute path file of the coverage-data-file 
+
+# See the tacoco github page for more options on creating the json coverage file
 
 mvn -q exec:java -Panalyzer -Dtacoco.sut=$1 -Dtacoco.json=${2}-compact.json -Dtacoco.exec=jacoco.exec -Dtacoco.pp -Dtacoco.fmt=COMPACT
 echo ${2}-compact.json

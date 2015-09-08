@@ -10,9 +10,11 @@ import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
 /**
- * Takes the required information from the compact json file produced by tacoco
- * retrieves program name, first line, test count, coverable lines, and coverage matrix
- */
+ * This class takes the required information from the compact json file produced by tacoco
+ * retrieves program name, first line, test count, coverable lines, and coverage matrix.
+ * Note that this class can only work with the compact json file produced by tacoco.
+ * The matrixes M and C correspond to the values needed in TarantulaSuspiciousnessCalculation.
+ **/
 
 public class covMatrixReader {
     private File jsonFile;

@@ -1,10 +1,15 @@
 #!/bin/bash
+# This script runs tacoco and creates the neccessary files in both the 
+# System-under-test dir and the tacoco dir, this is a copy of the run-tacoco
+# script already found in the tacoco dir, placed with the other scripts for 
+# convenience since changes cannot be made to the tacoco repo without permission
 
-# This script runs tacoco, the command line arg are as follows:
-# NOTE how there are no ending forward slashes at the end of the paths
-# $1 command line argument refers to absolute class path of the dir under test
-# $2 command line argument refers to absolute class path of the tacoco dir
-# run as ./run-tacoco absolute/path/of/your/project/root absolute/path/of/tacoco/root
+# (Note: there are no ending forward slashes at the end of the paths)
+# the command line arg are as follows:
+# $1 - absolute class path of the dir under test
+# $2 - absolute class path of the tacoco dir
+
+# example: ./run-tacoco absolute/path/of/your/project/root absolute/path/of/tacoco/root
 
 cd $1
 mvn dependency:build-classpath -Dmdep.outputFile="cp.txt"

@@ -3,13 +3,17 @@ package tarantula;
 import java.util.Arrays;
 import java.io.File;
 import java.util.ArrayList;
+
+/**
+ * This program outputs the suspiciousness of each line in a program
+ */
  
-public class TarantulaMain {
+	public class TarantulaMain {
 	 
 	    public static void main(String[] args) throws ClassNotFoundException {
 	    	
 	        // create the Matrix Reader to get Test -- Stmt information
-	        File f = new File(args[0]); // example: "/homes/iws/kevinb22/Downloads/triangle-mvn-compact-cov-matrix.json"
+	        File f = new File(args[0]); // example: "/home/Downloads/triangle-mvn-compact-cov-matrix.json"
 	        covMatrixReader reader = new covMatrixReader(f);
 	        
 	        // The test count is a Long in the Json file, must parse it to an Integer
@@ -45,33 +49,39 @@ public class TarantulaMain {
 	        Arrays.fill(L, true);
 	        calc.setL(L);
 	         
-	        // calc will perform all the calculations
+	        // compute the suspiciousness using the tarantula technique
 	        calc.compute();
 	         
 	        //display the results
 	        System.out.println("For program: " + reader.getFullName());
-	        displayConf(calc.getConfidence(), reader.getFirstLine());
-	        System.out.println("------------------------------------------------------------------");
-	        displaySusp(calc.getSuspiciousness(), reader.getFirstLine());
-	    }
+	    	  display(calc.getConfidence(), calc.getSuspiciousness(), reader.getFirstLine());
+	}
 	    
 	    
-	    // displays the confidence per line of the program starting from the
-	    // first line of the program identified by tacoco
-	    public static void displayConf(double[] a, Long firstLine){
-	        System.out.println("Confidence Array");
-	        for(int i = 0; i < a.length; i++) {
-	            System.out.println("line " + (i+firstLine) + ": " + a[i]);
-	        }
-	    }
+	// displays the confidence per line of the program starting from the
+	// first line of the program identified by tacoco
+	public static void displayConf(double[] a, Long firstLine){
+	   System.out.println("Confidence Array");
+	      for(int i = 0; i < a.length; i++) {
+	         System.out.println("line " + (i+firstLine) + ": " + a[i]);
+	      }
+	   }
 	    
-	    // displays the suspicion per line of the program starting from the
-	    // first line of the program identified by tacoco
-	    public static void displaySusp(double[] a, Long firstLine){
-	        System.out.println("Suspicion Array");
-	        for(int i = 0; i < a.length; i++) {
-	            System.out.println("line " + (i+firstLine) + ": " + a[i]);
-	        }
-	    }
+	// displays the suspicion per line of the program starting from the
+	// first line of the program identified by tacoco
+	public static void displaySusp(double[] a, Long firstLine){
+	   System.out.println("Suspicion Array");
+	      for(int i = 0; i < a.length; i++) {
+	         System.out.println("line " + (i+firstLine) + ": " + a[i]);
+	      }
+	   }
 
+	
+	// displays the suspicion and confidence per line of the program starting from the
+	// first line of the program identified by tacoco
+	public static void display(double[] c, double[] s, Long firstLine){
+ 	   for(int i = 0; i < s.length; i++) {
+ 	      System.out.printf("line " + (i+firstLine) + ": suspiciousness: %f, confidence: %f\n", s[i], c[i] );
+           }  
+        }
 }
