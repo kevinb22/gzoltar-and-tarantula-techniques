@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.defects4j.fl.test.TestSuite" time="0.01" tests="33" errors="0" skipped="0" failures="4">
+<testsuite name="triangle.test.TestSuite" time="0.011" tests="33" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.79-2.5.5.0.fc20.x86_64/jre/lib/amd64"/>
@@ -58,73 +58,73 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="test10" classname="com.defects4j.fl.test.TestSuite" time="0.003">
+  <testcase name="test10" classname="triangle.test.TestSuite" time="0.004">
     <failure message="expected:&lt;EQUILATERAL&gt; but was:&lt;ISOSCELES&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<EQUILATERAL> but was:<ISOSCELES>
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
 	at junit.framework.Assert.assertEquals(Assert.java:78)
 	at junit.framework.Assert.assertEquals(Assert.java:86)
 	at junit.framework.TestCase.assertEquals(TestCase.java:253)
-	at com.defects4j.fl.test.TestSuite.test10(TestSuite.java:36)
+	at triangle.test.TestSuite.test10(TestSuite.java:36)
 ]]></failure>
   </testcase>
-  <testcase name="test11" classname="com.defects4j.fl.test.TestSuite" time="0">
+  <testcase name="test11" classname="triangle.test.TestSuite" time="0">
     <failure message="expected:&lt;EQUILATERAL&gt; but was:&lt;INVALID&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<EQUILATERAL> but was:<INVALID>
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
 	at junit.framework.Assert.assertEquals(Assert.java:78)
 	at junit.framework.Assert.assertEquals(Assert.java:86)
 	at junit.framework.TestCase.assertEquals(TestCase.java:253)
-	at com.defects4j.fl.test.TestSuite.test11(TestSuite.java:39)
+	at triangle.test.TestSuite.test11(TestSuite.java:39)
 ]]></failure>
   </testcase>
-  <testcase name="test12" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test13" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test14" classname="com.defects4j.fl.test.TestSuite" time="0.001">
+  <testcase name="test12" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test13" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test14" classname="triangle.test.TestSuite" time="0.001">
     <failure message="expected:&lt;SCALENE&gt; but was:&lt;ISOSCELES&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<SCALENE> but was:<ISOSCELES>
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
 	at junit.framework.Assert.assertEquals(Assert.java:78)
 	at junit.framework.Assert.assertEquals(Assert.java:86)
 	at junit.framework.TestCase.assertEquals(TestCase.java:253)
-	at com.defects4j.fl.test.TestSuite.test14(TestSuite.java:48)
+	at triangle.test.TestSuite.test14(TestSuite.java:48)
 ]]></failure>
   </testcase>
-  <testcase name="test15" classname="com.defects4j.fl.test.TestSuite" time="0.001"/>
-  <testcase name="test16" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test17" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test18" classname="com.defects4j.fl.test.TestSuite" time="0.001"/>
-  <testcase name="test19" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test20" classname="com.defects4j.fl.test.TestSuite" time="0.001">
+  <testcase name="test15" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test16" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test17" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test18" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test19" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test20" classname="triangle.test.TestSuite" time="0.001">
     <failure message="expected:&lt;EQUILATERAL&gt; but was:&lt;INVALID&gt;" type="junit.framework.AssertionFailedError"><![CDATA[junit.framework.AssertionFailedError: expected:<EQUILATERAL> but was:<INVALID>
 	at junit.framework.Assert.fail(Assert.java:57)
 	at junit.framework.Assert.failNotEquals(Assert.java:329)
 	at junit.framework.Assert.assertEquals(Assert.java:78)
 	at junit.framework.Assert.assertEquals(Assert.java:86)
 	at junit.framework.TestCase.assertEquals(TestCase.java:253)
-	at com.defects4j.fl.test.TestSuite.test20(TestSuite.java:66)
+	at triangle.test.TestSuite.test20(TestSuite.java:66)
 ]]></failure>
   </testcase>
-  <testcase name="test21" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test22" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test23" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test24" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test25" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test26" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test27" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test28" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test29" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test30" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test31" classname="com.defects4j.fl.test.TestSuite" time="0.001"/>
-  <testcase name="test32" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test33" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test1" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test2" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test3" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test4" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test5" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test6" classname="com.defects4j.fl.test.TestSuite" time="0.001"/>
-  <testcase name="test7" classname="com.defects4j.fl.test.TestSuite" time="0"/>
-  <testcase name="test8" classname="com.defects4j.fl.test.TestSuite" time="0.001"/>
-  <testcase name="test9" classname="com.defects4j.fl.test.TestSuite" time="0"/>
+  <testcase name="test21" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test22" classname="triangle.test.TestSuite" time="0.001"/>
+  <testcase name="test23" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test24" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test25" classname="triangle.test.TestSuite" time="0.001"/>
+  <testcase name="test26" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test27" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test28" classname="triangle.test.TestSuite" time="0.001"/>
+  <testcase name="test29" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test30" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test31" classname="triangle.test.TestSuite" time="0.001"/>
+  <testcase name="test32" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test33" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test1" classname="triangle.test.TestSuite" time="0.001"/>
+  <testcase name="test2" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test3" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test4" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test5" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test6" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test7" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test8" classname="triangle.test.TestSuite" time="0"/>
+  <testcase name="test9" classname="triangle.test.TestSuite" time="0"/>
 </testsuite>

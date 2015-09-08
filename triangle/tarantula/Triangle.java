@@ -1,8 +1,8 @@
-package com.defects4j.fl;
+package triangle.tarantula;
 
 public class Triangle {
-
-	public static enum Type {
+	
+	public enum Type {
 		INVALID, SCALENE, EQUILATERAL, ISOSCELES
 	};
 	
@@ -15,7 +15,7 @@ public class Triangle {
 			trian = trian + 1;
 		if (a == c)
 			trian = trian + 2;
-		if (b == a) // should be b == c
+		if (b == a) // bug should be b == c
 			trian = trian + 3;
 		if (trian == 0)
 			if (a + b <= c || a + c <= b || b + c <= a)

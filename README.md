@@ -76,7 +76,8 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 4. Run TarantulaMain: TarantulaMain requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite.
 	- java TarantulaMain /absolute/path/to/repo/tacoco/triange-compact-cov-matrix.json TestSuite
 
-	- TarantulaMain can also be run in eclipse simply, copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to 	     hard code the files and classes, it is also easier (in my opinion) to set the build path since Runner and covMatrixReader both require imports. The needed jars, (junit and json-simple) are found in the 		lib repo or eclipse can easily add them. 
+	- TarantulaMain can also be run in eclipse simply, copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to
+hard code the files and classes, it is also easier (in my opinion) to set the build path since Runner and covMatrixReader both require imports. The needed jars, (junit and json-simple) are found in thelib repo or eclipse can easily add them. 
 
 5. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
 	- ./clean-tacoco
