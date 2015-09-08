@@ -77,7 +77,7 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 4. Compile the Tarantula classes.
 	- javac -cp /lib/\* tarantula/\*.java
 
-5.. Run TarantulaMain: TarantulaMain requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. Interestingly however the during testing many errors came up regarding the json parser or main classes not found. In the end the only way to avoid the problems was through the following commands 
+5. Run TarantulaMain: TarantulaMain requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. Interestingly however the during testing many errors came up regarding the json parser or main classes not found. In the end the only way to avoid the problems was through the following commands 
 	- java -cp .:junit-4.11.jar:json-simple-1.1.1.jar tarantula.TarantulaMain abs/path/to/triangle-mvn-compact-cov-matrix.json triangle.tarantula.TestSuite
 		- The above command means that the junit and json jars will have to be copied to the main dir until a better fix is found
 	- TarantulaMain can also be run in eclipse simply, copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to
