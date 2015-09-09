@@ -8,7 +8,7 @@ import java.util.ArrayList;
  * This program outputs the suspiciousness of each line in a program
  */
  
-	public class TarantulaMain {
+	public class Main {
 	 
 	    public static void main(String[] args) throws ClassNotFoundException {
 	    	
