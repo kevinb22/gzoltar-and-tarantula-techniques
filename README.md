@@ -33,79 +33,58 @@ Main can also be run in eclipse simply copy all the code tarantula dir into a ne
 Getting started
 ---------------
 1. Test and install primitive hamcrest onto the local repo (needed for Tarantula)
-	
 	- cd primitive-hamcrest
-	
 	- mvn test
-	
 	- mvn install
 
 2. Compile tacoco (needed for Tarantula)
-	
 	- cd tacoco
-	
 	- mvn compile
 
 3. Build triangle
-	
 	- cd triangle
-	
 	- mvn clean package
 
 Evaluating bugs using GZoltar
 -----------------------------
 1. Enter the gzoltar directory
-	
 	- cd gzoltar
 
 2. Run Gzoltar: the Gzoltar script can be run with the following command
-	
 	- ./run-gzoltar ../triangle triangle target/classes/:target/test-classes
-	
 	- (Optional) ./run-gzoltar ../triangle triangle target/classes/:target/test-classes | grep "Triangle.java" will print only the suspiciousness for lines in Triangle
 
 3. Generalize; the general form is 
-	
 	- ./run-gzoltar project dir test-package-to-execute class/path
 
 
 Evaluating bugs using Tarantula
 -------------------------------
 1. Enter the tacoco-scripts dir: All the scripts to run tacoco are held here
-	
 	- cd tacoco-scripts
 
 2. Run Tacoco: The run-tacoco script runs tacoco and creates cp.txt files in both the system-under-test dir and the tacoco dir the script requires the absolute paths of the
 the dir to be evaluated and the tacoco directory, see the script for more information 
-	
 	- ./run-tacoco /absoluteolute/path/to/repo/triangle /absolute/path/to/repo/tacoco
 
 3. Run Jacoco.exec Analyzer: The run-jacoco script creates the jacoco.exec file and the .json files in the tacoco dir, the script will have to be run inside the tacoco dir so you can copy it into the tacoco directory, see the script for more information 
-	
 	- cp -i run-jacoco ../tacoco
-	
 	- cd tacoco/
-	
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
 4. Compile the Tarantula classes and the test classes(triangle/tarantula classes).
-	
 	- (in fault localization research base directory)
 		- javac -cp /lib/\\\* tarantula/\*.java
 		- javac -cp /lib/\\\* triangle/tarantula/\*.java
 
 5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. An important note is that the TestSuite.class file must be in the same location as the TestSuite.java file. Otherwise the Main will not find the class file and will throw a NoClassDefFoundError   	
-	
 	- copy the .class file to the same dir as the .java file
 		- cd triangle/target/../test-classes/../java
 		- cp TestSuite.class triangle/src/test/../java 
-	
 	- java -cp .:lib/\\\* tarantula.Main /abs/path/to/triangle-mvn-compact-cov-matrix.json triangle.src.test.java.TestSuite
 
 6. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
-	
 	- ./clean-tacoco
-	
 	- mvn clean package (in tacoco dir)
 
 Directory Structure
