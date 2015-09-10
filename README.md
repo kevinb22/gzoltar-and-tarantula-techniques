@@ -7,10 +7,6 @@ Test Program: Triangle
 ----------------------
 Triangle.java is a short java program, there is a fault in line 18 of the program.
 TestSuite.java is a suite with 33 tests for triangle, running the tests should report 4 failed tests.
-There is a tarantula dir within the Triangle program which contains the same code as the src dir 
-but the files are under a different package name. For some reason the Tarantula implmentation was unable 
-to access this classes in the src dir(and it's associated packages). Until this problem is fixed the 
-temporary solution will be to have the seperate tarantula dir in triangle.
 
 GZoltar
 -------
@@ -29,9 +25,10 @@ The github projects for tacoco and primitive hamcrest can be found at https://gi
 respectively although the repos are copied into this project for convenience
 
 Main requires several arguments to be run:
-	- (1) The cov-matrix in Json format
-	- (2) The class file of the Test program
+	1. The cov-matrix in Json format
+	2. The class file of the Test program
 
+Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to hard code the files and classes. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
 
 Getting started
 ---------------
@@ -76,13 +73,16 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
 4. Compile the Tarantula classes and the test classes(triangle/tarantula classes).
+	- (in root)
 	- javac -cp /lib/\\\* tarantula/\*.java
 	- javac -cp /lib/\\\* triangle/tarantula/\*.java
 
-5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite.  
-	- java -cp .:lib/\\\* tarantula.Main /abs/path/to/triangle-mvn-compact-cov-matrix.json triangle.tarantula.TestSuite
-
-	- Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to hard code the files and classes. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
+5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. An important note is that the TestSuite.class file must be in the same location as the TestSuite.java file. Otherwise the Main will not find the class file and will throw a NoClassDefFoundError   	
+	- copy the .class file to the same dir as the .java file
+		- cd triangle/target/../test-classes/../java
+		- cp TestSuite.class triangle/src/test/../java
+ 
+	- java -cp .:lib/\\\* tarantula.Main /abs/path/to/triangle-mvn-compact-cov-matrix.json triangle.src.test.java.TestSuite
 
 6. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
 	- ./clean-tacoco

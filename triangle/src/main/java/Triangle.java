@@ -1,4 +1,4 @@
-package triangle;
+package triangle.src.main.java;
 
 public class Triangle {
 	
