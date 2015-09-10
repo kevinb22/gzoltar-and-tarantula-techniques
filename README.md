@@ -72,18 +72,17 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 
 3. Run Jacoco.exec Analyzer: The run-jacoco script creates the jacoco.exec file and the .json files in the tacoco dir, the script will have to be run inside the tacoco dir so you can copy it into the tacoco directory, see the script for more information 
 	- cp -i run-jacoco ../tacoco
-	- cd /tacoco/
+	- cd tacoco/
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
 4. Compile the Tarantula classes and the test classes(triangle/tarantula classes).
-	- javac -cp /lib/\* tarantula/\*.java
-	- javac -cp /lib/\* triangle/tarantula\*.java
+	- javac -cp /lib/\\\* tarantula/\*.java
+	- javac -cp /lib/\\\* triangle/tarantula/\*.java
 
 5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite.  
-	- java -cp .:lib/junit-4.11.jar:lib/json-simple-1.1.1.jar tarantula.Main /abs/path/to/triangle-mvn-compact-cov-matrix.json triangle.tarantula.TestSuite
+	- java -cp .:lib/\\\* tarantula.Main /abs/path/to/triangle-mvn-compact-cov-matrix.json triangle.tarantula.TestSuite
 
-	- Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to
-hard code the files and classes. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
+	- Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to hard code the files and classes. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
 
 6. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
 	- ./clean-tacoco
