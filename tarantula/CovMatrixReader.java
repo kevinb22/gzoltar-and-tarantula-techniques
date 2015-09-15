@@ -10,25 +10,23 @@ import org.json.simple.parser.ParseException;
 import org.json.simple.parser.JSONParser;
 
 /**
- * This class takes the required information from the compact json file produced by tacoco
- * retrieves program name, first line, test count, coverable lines, and coverage matrix.
+ * This class takes reads a compact json file produced by tacoco and
+ * retrieves the program name, first line, test count, coverable lines, and coverage matrix.
  * Note that this class can only work with the compact json file produced by tacoco.
- * The matrixes M and C correspond to the values needed in TarantulaSuspiciousnessCalculation.
+ * The matrixes M and C correspond to the fields of the same name in TarantulaSuspiciousnessCalculation.
  **/
 
-public class covMatrixReader {
-    private File jsonFile;
-    private boolean[][] M;
-    private boolean[] C;
-    private JSONArray sources;
-    private Long testCount;
-    private Long firstLine;
-    private String fullName;
-     
-     
-    public covMatrixReader(){}
-     
-    public covMatrixReader(File f){
+public class CovMatrixReader {
+    private File jsonFile;	// Json file to be read from
+    private boolean[][] M;	// [test][stmt] matrix for each test and the lines it covers 
+    private boolean[] C;	// [stmt] matrix of coverable lines from json file
+    private JSONArray sources;	// key in the json file
+    private Long testCount;	// number of tests, as stated by the json file
+    private Long firstLine;	// first line of the program, as stated by the json file
+    private String fullName;	// name of the program, as stated by the json file
+    
+    /** Initializes a covMatrixReader to read File f **/
+    public CovMatrixReader(File f){
         // create a new JSON parser
         JSONParser parser = new JSONParser();
          
@@ -75,36 +73,35 @@ public class covMatrixReader {
         } catch (ParseException e) {
             e.printStackTrace();
         }
- 
     }
      
-    /**Return a double boolean array where the first dimension is indexed by test number
-     * and the second dimension is indexed by line number**/
+    /** Return a double boolean array where the first dimension is indexed by test number
+    and the second dimension is indexed by line number**/
     public boolean[][] getM(){
         return M;
     }
      
-    /**Return a boolean array indexed by line number and true=line is coverable/not a blank line or comment**/
+    /** Return a boolean array indexed by line number and true=line is coverable/not a blank line or comment**/
     public boolean[] getC(){
         return C;
     }
      
-    /**Return a Long representing the total tests in the test program**/
+    /** Return a Long representing the total tests in the test program**/
     public Long getTestCount(){
         return testCount;
     }
     
-    /**Return a Long representing the line number of the first coverable line**/
+    /** Return a Long representing the line number of the first coverable line**/
     public Long getFirstLine(){
         return firstLine;
     }
     
-    /**Return a String representing the name of the test program**/
+    /** Return a String representing the name of the test program**/
     public String getFullName(){
     	return fullName;
     }
      
-    /**Private method to create a boolean[] from a JSONArray**/
+    /** Private method to create a boolean[] from a JSONArray**/
     private boolean[] createBoolArray(JSONArray array){
         boolean[] result = new boolean[array.size()];
         for(int i = 0; i < array.size(); i++) {

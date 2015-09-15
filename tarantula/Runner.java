@@ -1,23 +1,21 @@
 package tarantula;
 
 import java.util.ArrayList;
-import java.util.List;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
 /**
- * This class stores all the failed tests from a Test class
+ * This class stores all the failed tests from a JUnit Test class.
+ * It requires the the name of the JUnit test class as a parameter for the constructor.
  */
 
 public class Runner {
-	/**Holds a list of all the tests numbers that fail **/
+    /** Holds a list of all the tests numbers that fail **/
     private ArrayList<Integer> failCases;
     
-    /**Holds the results from the test program**/
+    /** Holds the results from the test program**/
     Result result;
-     
-    public Runner(){}
      
     @SuppressWarnings("rawtypes")
     /**Initialize a Runner object**/
@@ -26,8 +24,8 @@ public class Runner {
         result = JUnitCore.runClasses(testClass);
     }
     
-    /**Loops through all the failures in result and gets the test header
-     * pre: all the test headers must in the format: test# e.g: test1, test 10 
+    /** Loops through all the failures in result and gets the test header
+     * pre: all the test headers must in the format test# (ex: test1, test 10) 
      * post: adds the test header integer segment to the failCases **/
     public void determineFailCases(){
         for (Failure failure : result.getFailures()) {
@@ -38,7 +36,7 @@ public class Runner {
         }
     }   
      
-    /**Return the list of the fail cases**/
+    /** Return the list containing the fail case indexes**/
     public ArrayList<Integer> getFailCases(){
         return failCases;
     }
