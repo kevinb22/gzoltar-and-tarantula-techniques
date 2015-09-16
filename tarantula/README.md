@@ -19,19 +19,19 @@ requires several boolean arrays in order to be able to compute suspisciousness o
 
  	- Coverable Statments -C[] boolean array indexed by program element number, true=coverable false=uncoverable
 
-Runner
-------
+Runner Class
+------------
 This program stores the results from a junit tests and holds an array of the test case numbers that fail. All
 test headers should be as follows test1, test2, test3 ect. Otherwise the Runner will not work properly.
 
-CovMatrixReader
----------------
+CovMatrixReader Class
+---------------------
 This program reads the json file produces by tacoco and parses the information into the boolean arrays needed by 
 TarantulaSuspiciousnessCalculation. The covMatrixReader is used only to parse information from the compact version of the json
 file, this is the default json format when running tacoco.
 
-TarantulaMain
---------------
-The main for the project. Requires two command line arguments
+TarantulaMain Class
+-------------------
+The main class for the project. Requires two command line arguments
 	-(1) absolute path to json file - This should be in the tacoco dir after running the scripts in fl-scripts
 	-(2) the name of the test program - TestSuite (the class is in a package include the packace in the name ex: Triangle.TestSuite)

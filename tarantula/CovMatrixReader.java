@@ -17,13 +17,13 @@ import org.json.simple.parser.JSONParser;
  **/
 
 public class CovMatrixReader {
-    private File jsonFile;	// Json file to be read from
-    private boolean[][] M;	// [test][stmt] matrix for each test and the lines it covers 
-    private boolean[] C;	// [stmt] matrix of coverable lines from json file
-    private JSONArray sources;	// key in the json file
-    private Long testCount;	// number of tests, as stated by the json file
-    private Long firstLine;	// first line of the program, as stated by the json file
-    private String fullName;	// name of the program, as stated by the json file
+    private File jsonFile;      // Json file to be read from
+    private boolean[][] M;      // [test][stmt] matrix for each test and the lines it covers 
+    private boolean[] C;        // [stmt] matrix of coverable lines from json file
+    private JSONArray sources;  // key in the json file
+    private Long testCount;     // number of tests, as stated by the json file
+    private Long firstLine;     // first line of the program, as stated by the json file
+    private String fullName;    // name of the program, as stated by the json file
     
     /** Initializes a covMatrixReader to read File f **/
     public CovMatrixReader(File f){
@@ -98,7 +98,7 @@ public class CovMatrixReader {
     
     /** Return a String representing the name of the test program**/
     public String getFullName(){
-    	return fullName;
+        return fullName;
     }
      
     /** Private method to create a boolean[] from a JSONArray**/
