@@ -12,15 +12,24 @@
 
 <!-- Target to compile the project -->
     <target name="compile" depends="init" description="Compile">
-        <javac includeantruntime="true"
-               srcdir="src"
-               destdir="bin"
-               debug="yes"
-               fork="no">
+        <javac includeantruntime="true" srcdir="src" destdir="bin" debug="yes" fork="no">
             <classpath>
-                <pathelement path="/lib/json-simple-1.1.1.jar"/>
-                <pathelement path="/lib/junit-4.11.jar"/>
+                <pathelement path="lib/json-simple-1.1.1.jar"/>
+                <pathelement path="lib/junit-4.11.jar"/>
             </classpath>
         </javac>
+    </target>
+
+<!-- Target to run the main-->
+    <target name="run" depends="compile">
+        <java classname="tarantula.Main">
+            <classpath>
+               <pathelement path="lib/json-simple-1.1.1.jar"/>
+               <pathelement path="lib/junit-4.11.jar"/>
+               <pathelement location="bin"/>
+            </classpath>
+            <arg value="${arg0}"/>
+            <arg value="${arg1}"/>
+        </java>
     </target>
 </project>

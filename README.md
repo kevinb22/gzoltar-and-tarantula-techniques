@@ -51,8 +51,8 @@ Evaluating bugs using GZoltar
 	- cd gzoltar
 
 2. Run Gzoltar: the Gzoltar script can be run with the following command
-	- ./run-gzoltar ../triangle triangle target/classes/:target/test-classes
-	- (Optional) ./run-gzoltar ../triangle triangle target/classes/:target/test-classes | grep "Triangle.java" will print only the suspiciousness for lines in Triangle
+	- ./run-gzoltar ../../triangle triangle target/classes/:target/test-classes
+	- (Optional) ./run-gzoltar ../../triangle triangle target/classes/:target/test-classes | grep "Triangle.java" will print only the suspiciousness for lines in Triangle
 
 3. Generalize; the general form is 
 	- ./run-gzoltar project dir test-package-to-execute class/path
@@ -72,16 +72,12 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 	- cd tacoco/
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
-4. Compile the Tarantula classes, depending on what linux operating system the user is running /lib/ may just be lib/ 
-	- (in fault localization research base directory)
-		- javac -cp /lib/\\\* tarantula/\*.java
-		
+4. Compile the Tarantula classes (in the tarantula dir)
+	- ant compile	
 
-5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. An important note is that the TestSuite.class file must be in the same location as the TestSuite.java file. Otherwise the Main will not find the class file and will throw a NoClassDefFoundError   	
-	- copy the .class file to the same dir as the .java file
-		- cd triangle/target/../test-classes/../java
-		- cp TestSuite.class triangle/src/test/../java 
-	- java -cp .:lib/\\\* tarantula.Main /abs/path/to/triangle-compact-cov-matrix.json triangle.src.test.java.TestSuite
+NOTE: currently the run target is not working, it is unable to find the second argument
+5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. 
+	-  ant -Darg0=/abs/path/to/triangle-compact-cov-matrix.json -Darg1=triangle.src.test.java.TestSuite run
 
 6. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
 	- ./clean-tacoco
