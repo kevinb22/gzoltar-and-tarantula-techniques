@@ -30,9 +30,9 @@ public class Runner {
     public void determineFailCases(){
         for (Failure failure : result.getFailures()) {
             String header = failure.getTestHeader();
-            String header_segment = header.substring(0, header.indexOf("("));
-            String test_case_num = header.substring(4, header_segment.length());
-            failCases.add(Integer.parseInt(test_case_num));
+            String headerSegment = header.substring(0, header.indexOf("("));
+            String testCaseNum = header.substring(4, headerSegment.length());
+            failCases.add(Integer.parseInt(testCaseNum));
         }
     }   
      
