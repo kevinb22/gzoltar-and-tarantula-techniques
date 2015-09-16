@@ -1,0 +1,26 @@
+<project name="tarantula" default="compile" basedir=".">
+
+<!-- Target to clean up -->
+    <target name="clean" description="Clean">
+        <delete dir="bin"/>
+    </target>
+
+<!-- Target to initialize build -->
+    <target name="init">
+        <mkdir dir="bin"/>
+    </target>
+
+<!-- Target to compile the project -->
+    <target name="compile" depends="init" description="Compile">
+        <javac includeantruntime="true"
+               srcdir="src"
+               destdir="bin"
+               debug="yes"
+               fork="no">
+            <classpath>
+                <pathelement path="/lib/json-simple-1.1.1.jar"/>
+                <pathelement path="/lib/junit-4.11.jar"/>
+            </classpath>
+        </javac>
+    </target>
+</project>
