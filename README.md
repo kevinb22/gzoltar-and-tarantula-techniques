@@ -100,16 +100,16 @@ The directory structure is as follows
 		|--- tacoco:                    Repo, used to obtain per-test line coverage information
 		|
 		|--- scripts:                   Scripts to run GZoltar and automate a portion of tarantula
-	            |
-         	    |--- tacoco-scripts:        Scripts that run tacoco and create the jacoco.exec
+		    |
+		    |--- tacoco-scripts:        Scripts that run tacoco and create the jacoco.exec
 		    |
 		    |--- gzoltar-scripts:       Script that run the gzoltar jar file
-	  	    |
+		    |
 		|--- src:                       Source files
 		    |
 		    |--- triangle:              Test program, maven build
-                    |
-                    |--- tarantula:             Java implementation of tarantula            
+		    |
+		    |--- tarantula:             Java implementation of tarantula            
 	
 
 
