@@ -73,11 +73,11 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
 4. Compile the Tarantula classes (in the tarantula dir)
-	- ant compile	
+	- ant compile-tarantula	
 
 NOTE: currently the run target is not working, it is unable to find the second argument
 5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. 
-	-  ant -Darg0=/abs/path/to/triangle-compact-cov-matrix.json -Darg1=triangle.src.test.java.TestSuite run
+	-  ant -Darg0=/abs/path/to/triangle-compact-cov-matrix.json -Darg1=triangle.src.test.java.TestSuite run-tarantula
 
 6. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
 	- ./clean-tacoco
@@ -92,8 +92,6 @@ The directory structure is as follows
 		|--- tacoco-scripts:		Scripts that run tacoco and create the jacoco.exec
 		|
 		|--- gzoltar:			Scripts that run the gzoltar jar file
-		|
-		|--- lib:			Additional jars or files used in the repo
 		|
 		|--- primitive-hamcrest:	Repo, used by tacoco
 		|
