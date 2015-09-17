@@ -28,7 +28,7 @@ Main requires several arguments to be run:
 	1. The cov-matrix in Json format
 	2. The class file of the Test program
 
-Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments, another option is to hard code the files and classes. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
+Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
 
 Getting started
 ---------------
@@ -72,23 +72,24 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 	- cd tacoco/
 	- ./run-jacoco /absolute/path/to/repo/triangle triangle /absolute/path/to/repo/tacoco
 
-4. Compile the Tarantula classes (in the tarantula dir)
+4. Compile the Tarantula classes (in base dir)
 	- ant compile	
 
-NOTE: currently the run target is not working, it is unable to find the second argument
-5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. 
+5. Run Tarantula's Main: Main requires two args(see the file for more details), the first is the absolute path to the cov-matrix.json file, the second is the name of the Test class, if the test program belongs to a package make sure to specify the package, ex: Triangle.TestSuite. Input the two arguments to the ant target run.tarantula 
 	-  ant -Darg0=/abs/path/to/triangle-compact-cov-matrix.json -Darg1=triangle.TestSuite run.tarantula
 
 6. Clean the tacoco dir: Run clean-tacoco in order to clean the dir so it can be reused, this means tacoco will have to be recompiled
 	- ./clean-tacoco
 	- mvn clean package (in tacoco dir)
-	- ant clean (in base dir)i
+	- ant clean (in base dir)
 
 Directory Structure
 -------------------
 The directory structure is as follows
 	
 	fault-localization-research
+		|
+		|--- lib:                       Jar files needed in this project
 		|
 		|--- tacoco-scripts:            Scripts that run tacoco and create the jacoco.exec
 		|
@@ -98,6 +99,12 @@ The directory structure is as follows
 		|
 		|--- tacoco:                    Repo, used to obtain per-test line coverage information
 		|
+		|--- scripts:                   Scripts to run GZoltar and automate a portion of tarantula
+	            |
+         	    |--- tacoco-scripts:        Scripts that run tacoco and create the jacoco.exec
+		    |
+		    |--- gzoltar-scripts:       Script that run the gzoltar jar file
+	  	    |
 		|--- src:                       Source files
 		    |
 		    |--- triangle:              Test program, maven build
