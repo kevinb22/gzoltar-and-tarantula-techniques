@@ -15,8 +15,8 @@ for this project the GZoltar jar file calculates the suspiciousness of lines, it
 
 Tarantula
 ---------
-Tarantula is the second fault localization tool in this repo. For this project, tacoco is used to obtain a json format coverage matrix of the program.
-Next Main.java uses the coverage matrix and the test results to calculate suspiciousness of lines.
+Tarantula is the second fault localization tool in this repo. For this project, tacoco is used to obtain a json format coverage matrix of the program, 
+then java programs in the src/tarantula dir use the coverage matrix to  calculate suspiciousness of lines.
 
 (Note: Test programs should have their test headers named using the following format test1, test2, test3 ...test33 ect. The Runner.java class in the tarantula
 dir will not be able to work unless the headers have the format test#, see the src code in Runner.java for more information)
@@ -89,17 +89,17 @@ The directory structure is as follows
 	
 	fault-localization-research
 		|
-		|--- tacoco-scripts:		Scripts that run tacoco and create the jacoco.exec
+		|--- tacoco-scripts:            Scripts that run tacoco and create the jacoco.exec
 		|
-		|--- gzoltar:			Scripts that run the gzoltar jar file
+		|--- gzoltar:                   Scripts that run the gzoltar jar file
 		|
-		|--- primitive-hamcrest:	Repo, used by tacoco
+		|--- primitive-hamcrest:        Repo, used by tacoco
 		|
-		|--- tacoco:			Repo, used to obtain per-test line coverage information
+		|--- tacoco:                    Repo, used to obtain per-test line coverage information
 		|
-		|--- tarantula:			Source files to obtain the suspiciousness for lines in a program
+		|--- src:                       Source files for tarantula java implementation
 		|
-		|--- triangle:			Test program in src, seperate version of test program in tarantula, maven build
+		|--- triangle:                  Test program, maven build
 
 
 	
