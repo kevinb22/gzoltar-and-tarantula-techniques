@@ -1,5 +1,5 @@
-tarantula
----------
+Tarantula Java Implementation
+----------------------------
 The classes in the tarantula directory are used to take the information from the json file produced by tacoco and junit tests on the program and 
 then use the information to caculate the supsciousness for the lines of a program using the tarantula technique. Refer to the documentation
 in the classes for more information.
@@ -34,4 +34,4 @@ TarantulaMain Class
 -------------------
 The main class for the project. Requires two command line arguments
 	-(1) absolute path to json file - This should be in the tacoco dir after running the scripts in fl-scripts
-	-(2) the name of the test program - TestSuite (the class is in a package include the packace in the name ex: Triangle.TestSuite)
+	-(2) the name of the test program - TestSuite (the class is in a package include the packace in the name ex: triangle.TestSuite)

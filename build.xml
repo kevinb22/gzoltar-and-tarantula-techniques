@@ -4,27 +4,32 @@
 <property name="tarantula.bin.dir" value ="./bin"/>
 
 <!-- Target to clean up -->
-    <target name="clean.tarantula" description="Clean">
+    <target name="clean" description="Clean">
         <delete dir="./bin"/>
     </target>
 
 <!-- Target to initialize build -->
-    <target name="init.tarantula">
+    <target name="init">
         <mkdir dir="./bin"/>
     </target>
 
 <!-- Target to compile the project -->
-    <target name="compile.tarantula" depends="init.tarantula" description="Compile">
+    <target name="compile" depends="init" description="Compile">
         <javac includeantruntime="true" srcdir="${tarantula.src.dir}" destdir="${tarantula.bin.dir}" debug="yes" fork="no">
             <classpath>
                 <pathelement path="lib/json-simple-1.1.1.jar"/>
                 <pathelement path="lib/junit-4.11.jar"/>
             </classpath>
         </javac>
+        <javac includeantruntime="true" srcdir="./src/triangle" destdir="${tarantula.bin.dir}" debug="yes" fork="no">
+            <classpath>
+                <pathelement path="lib/junit-4.11.jar"/>
+            </classpath>
+        </javac>
     </target>
 
 <!-- Target to run the main-->
-    <target name="run.tarantula" depends="compile.tarantula">
+    <target name="run.tarantula" depends="compile">
         <java classname="tarantula.Main">
             <classpath>
                <pathelement path="lib/json-simple-1.1.1.jar"/>
