@@ -11,7 +11,7 @@ TestSuite.java is a suite with 33 tests for triangle, running the tests should r
 GZoltar
 -------
 GZoltar is one of the fault localization tool in this repo, it can be used as a plugin on Eclipse(which includes the visualization component), 
-for this project the GZoltar jar file calculates the suspiciousness of lines, it is found in the lib dir. 
+for this project the GZoltar jar file is used to calculate the suspiciousness of lines. 
 
 Tarantula
 ---------
@@ -25,8 +25,8 @@ The github projects for tacoco and primitive hamcrest can be found at https://gi
 respectively although the repos are copied into this project for convenience
 
 Main requires several arguments to be run:
-	1. The cov-matrix in Json format
-	2. The class file of the Test program
+	1. The cov-matrix in json format
+	2. The class file of the test program
 
 Main can also be run in eclipse simply copy all the code tarantula dir into a new java project and use the Run Configurations option to allow for command line arguments. The needed jars, (junit and json-simple) are found in the lib repo so  eclipse can easily add them. 
 
@@ -82,6 +82,12 @@ the dir to be evaluated and the tacoco directory, see the script for more inform
 	- ./clean-tacoco
 	- mvn clean package (in tacoco dir)
 	- ant clean (in base dir)
+
+Generalizing GZoltar and Tarantula
+----------------------------------
+To use the fault localization tools on code other than triangle simply create a maven build file around the source and test code to be evaluated. 
+Add the primitive hamcrest snapshot the te pom.xml file (see the triangle pom.xml file for reference). Then the commands used to execute the test
+run on triangle will be the same commands used to evaluate the suspiciousness of the other code.
 
 Directory Structure
 -------------------
