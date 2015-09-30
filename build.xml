@@ -1,8 +1,17 @@
 <project name="tarantula" default="compile" basedir=".">
 
-<property name="tarantula.src.dir" value="./src/tarantula"/>
-<property name="tarantula.bin.dir" value ="./bin"/>
-
+<!-- patternset to decrease redundancy in the buildfile-->
+   <patternset id="jars" >
+      <include name="**/*.jar"/>
+   </patternset>
+  
+<!-- Path attribute using the patternset-->
+   <path id="jar.files"> 
+      <fileset dir="lib">
+         <patternset refid="jars"/>
+      </fileset>
+   </path>
+   
 <!-- Target to clean up -->
     <target name="clean" description="Clean">
         <delete dir="./bin"/>
@@ -15,16 +24,8 @@
 
 <!-- Target to compile the project -->
     <target name="compile" depends="init" description="Compile">
-        <javac includeantruntime="true" srcdir="${tarantula.src.dir}" destdir="${tarantula.bin.dir}" debug="yes" fork="no">
-            <classpath>
-                <pathelement path="lib/json-simple-1.1.1.jar"/>
-                <pathelement path="lib/junit-4.11.jar"/>
-            </classpath>
-        </javac>
-        <javac includeantruntime="true" srcdir="./src/triangle" destdir="${tarantula.bin.dir}" debug="yes" fork="no">
-            <classpath>
-                <pathelement path="lib/junit-4.11.jar"/>
-            </classpath>
+        <javac includeantruntime="true" srcdir="src" destdir="bin" debug="yes" fork="no">
+            <classpath refid="jar.files"/>
         </javac>
     </target>
 
@@ -32,8 +33,7 @@
     <target name="run.tarantula" depends="compile">
         <java classname="tarantula.Main">
             <classpath>
-               <pathelement path="lib/json-simple-1.1.1.jar"/>
-               <pathelement path="lib/junit-4.11.jar"/>
+               <path refid="jar.files"/>
                <pathelement location="bin"/>
             </classpath>
             <arg value="${arg0}"/>
